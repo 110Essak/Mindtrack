@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mindtrack-app
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DEMO_USER_ID
+        sync: false
+
+databases:
+  - name: mindtrack-db
+    plan: free
